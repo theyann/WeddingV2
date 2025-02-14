@@ -1,0 +1,78 @@
+{
+    "pages": [
+        {
+            "name": "asteroid",
+            "guestType": "a"
+        },
+        {
+            "name": "binary",
+            "guestType": "b"
+        },
+        {
+            "name": "comet",
+            "guestType": "c"
+        }
+    ],
+    "sections": [
+        {
+            "name": "countdown",
+            "order": "0",
+            "visibleForGuestTypes": [ "a", "b", "c" ]
+        },
+        {
+            "name": "mainTitle",
+            "order": "1",
+            "visibleForGuestTypes": [ "a", "b", "c" ]
+        },
+        {
+            "name": "welcome",
+            "order": "2",
+            "visibleForGuestTypes": [ "a", "b", "c" ]
+        },
+        {
+            "name": "rsvp",
+            "order": "3",
+            "visibleForGuestTypes": [ "a", "b", "c" ]
+        },
+        {
+            "name": "program",
+            "order": "4",
+            "visibleForGuestTypes": [ "a", "b", "c" ]
+        },
+        {
+            "name": "ceremony",
+            "order": "5",
+            "visibleForGuestTypes": [ "a", "b" ]
+        },
+        {
+            "name": "drink",
+            "order": "6",
+            "visibleForGuestTypes": [ "a" ]
+        },
+        {
+            "name": "festivities",
+            "order": "6",
+            "visibleForGuestTypes": [ "b" ]
+        },
+        {
+            "name": "party",
+            "order": "6",
+            "visibleForGuestTypes": [ "c" ]
+        },
+        {
+            "name": "gift",
+            "order": "7",
+            "visibleForGuestTypes": [ "a", "b", "c" ]
+        },
+        {
+            "name": "faq",
+            "order": "8",
+            "visibleForGuestTypes": [ "a", "b", "c" ]
+        },
+        {
+            "name": "contact",
+            "order": "9",
+            "visibleForGuestTypes": [ "a", "b", "c" ]
+        }
+    ]
+}

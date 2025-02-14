@@ -1,0 +1,30 @@
+My fiance and I are getting married on Saturday August 30th 2025, and I need to make a website to provide the most necessary information for the guests.
+
+We have 3 types of guests:  
+- guests that will just be there for the drink before the dinner  (type A, codename asteroid)
+- guests that will attend the drink, the dinner and the party  (type B, codename binary)
+- guests that will arrive after dinner to enjoy only the party  (type C, codename comet)
+
+I imagine a static website (meaning it works without a running server) that would be html5, javascript and CSS.
+
+Required features:
+- Responsive design so that the website can work on a computer and on a smartphone screen.
+- The site must work on all major browsers, Chrome, Safari, Edge, Opera, Firefox, etc.
+- The site content will be in English and French, the language will be defined by a query parameter, default is french. There must be a button to be able to switch language if necessary 
+- There will be 3 page, one per guest type, that will contain only the information relevant for that type.
+- The 3 pages will be named after the codename for each guest type.
+- There should not be a query parameter for the type in the url, it can be deduced by the page itself.
+- Each page should use common components when possible, so that we don't have to re-write the same block of code multiple times
+- There is a Google Form for the RSVP, one per guest type. If possible to embed it in the page that would be great but not mandatory. The urls can be found in the commonInfo.json file.
+- The schedule and respond by date can be found in the commonInfo.json file.
+- A link from the address of the venue that will help the user to create a route from their place to the venue integrating with their navigation app of choice (if possible)
+- Make the main title big and centered
+- We want a countdown feature that will count the days, hours minutes and seconds until the wedding day
+
+Technical requests:
+- use the file WeddingInviteOutside.jpeg to extract the color and the vibe for the look and feel of the site. Try to use as many colors as possible without going overboard.
+- We like gradients.
+- Follow the structure.json file to what sections to display in which pages and in which order
+- Each section should look the same
+- Make sure that all the button designs are the same to be consistant
+- Use the i18n.json to know what text to put in the different sections

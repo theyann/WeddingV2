@@ -1,0 +1,225 @@
+[
+    {
+        "section": "countdown",
+        "title": {
+            "fr": "Compter à rebours avant le Jour J",
+            "en": "Countdown until D Day"
+        }
+    },
+    {
+        "section": "mainTitle",
+        "title": {
+            "fr": "Y + J = Love And Fiesta",
+            "en": "Y + J = Love And Fiesta"
+        }
+    },
+    {
+        "section": "welcome",
+        "message": {
+            "fr": "Si vous êtes sur cette page c'est que vous allez certainement partager cette journée avec nous et nous nous en réjouissons ! Vous trouverez ci-dessous quelques informations qui pourraient vous être utiles pour préparer votre venue.",
+            "en": "If you are on this page it means that you are probably going to spend this day with us, and are looking forward to seeing there! Below you will find some information that might be useful to prepare for your attendance."
+        }
+    },
+    {
+        "section": "rsvp",
+        "title":  {
+            "fr": "Confirmer votre présence",
+            "en": "Confirme your attendance"
+        },
+        "message": {
+            "fr": "Afin de nous permettre de nous organiser au mieux, merci de bien vouloir confirmer votre présence en répondant au formulaire ci dessous.",
+            "en": "To help us organize everything in the best way possible, please confirm your attendance by filling out the form below."
+        },
+        "deadline": {
+            "fr": "Veuillez répondre avant le 15 mai 2025",
+            "en": "Please respond before May 15th 2025"
+        },
+        "link": {
+            "label": {
+                "fr": "RSVP",
+                "en": "RSVP"
+            },
+            "url": [
+                {
+                    "guestType": "a",
+                    "fr": "https://docs.google.com/forms/d/e/1FAIpQLSeUeQaR_gYf0IhTchjGETtlMoueRnXb1JimlaKycD-bB95-YQ/viewform?usp=header",
+                    "en": "https://docs.google.com/forms/d/e/1FAIpQLSeUeQaR_gYf0IhTchjGETtlMoueRnXb1JimlaKycD-bB95-YQ/viewform?usp=header"
+                },
+                {
+                    "guestType": "b",
+                    "fr": "https://docs.google.com/forms/d/e/1FAIpQLSf6N7ia9zjOVySZCGzFm79VhQ0TQTXaJ8L_JV8WZsTd2r4gCw/viewform?usp=header",
+                    "en": "https://docs.google.com/forms/d/e/1FAIpQLSf6N7ia9zjOVySZCGzFm79VhQ0TQTXaJ8L_JV8WZsTd2r4gCw/viewform?usp=header"
+                },
+                {
+                    "guestType": "c",
+                    "fr": "https://docs.google.com/forms/d/e/1FAIpQLSeUeQaR_gYf0IhTchjGETtlMoueRnXb1JimlaKycD-bB95-YQ/viewform?usp=header",
+                    "en": "https://docs.google.com/forms/d/e/1FAIpQLSeUeQaR_gYf0IhTchjGETtlMoueRnXb1JimlaKycD-bB95-YQ/viewform?usp=header"
+                }
+            ]
+        }
+    },
+    {
+        "section": "program",
+        "title": {
+            "fr": "Programme de la journée",
+            "en": "Program for the day"
+        },
+        "message:": [
+            {
+                "guestType": "a",
+                "fr": "14h00 - Cérémonie civile à la maison communale.\n15h00 - Vin d'honneur à la Ferme du Renard.",
+                "en": "2:00 PM - Civil Ceremony at Town Hall.\n3h00 PM -  Welcome Drinks at La Ferme du Renard."
+            },
+            {
+                "guestType": "b",
+                "fr": "14h00 - Cérémonie civile à la maison communale.\n15h00 - Vin d'honneur à la Ferme du Renard.\n18h00 - Dîner.\n20h00 - Fiesta !\nPetit matin - fin des festivités.",
+                "en": "2:00 PM - Civil Ceremony at Town Hall.\n3h00 PM -  Welcome Drinks at La Ferme du Renard.\n6h00 PM - Dinner.\n8h00 PM - Fiesta!\nEarly morning - end of festivities."
+            },
+            {
+                "guestType": "c",
+                "fr": "20h00 - Fiesta à la Ferme du Renard !\nPetit matin - fin des festivités.",
+                "en": "8h00 PM - Fiesta at the Ferme du Renard!\nEarly morning - end of festivities."
+            }
+        ]
+    },
+    {
+        "section": "ceremony",
+        "title": {
+            "fr": "Cérémonie",
+            "en": "Ceremony"
+        },
+        "message": {
+            "fr": "La cérémonie se déroulera à la maison communale d'Hélécine à partir de 14h. (voir addresse ci-dessous)",
+            "en": "The ceremony will take place at the Hélécine town hall starting at 2:00 PM. (see address below)"
+        },
+        "address": "Rue le Brouc 2, 1357 Hélécine, Belgique"
+    },
+    {
+        "section": "drink",
+        "title": {
+            "fr": "Vin d'honneur",
+            "en": "Welcome drink"
+        },
+        "message": {
+            "fr": "Après la cérémonie, un vin d'honneur sera servi à la Ferme du Renard (addresse ci-dessous) à partir de 15h.",
+            "en": "After the ceremony, a welcome drink will be served at La Ferme du Renard (address below) starting at 3:00 PM."
+        },
+        "address": "Rue Pierre Renard 10, 1350 Orp-Jauche, Belgique"
+    },
+    {
+        "section": "festivities",
+        "title": {
+            "fr": "Les Festivités",
+            "en": "The Festivities"
+        },
+        "message": {
+            "fr": "Après la cérémonie, rendez-vous à la Ferme du Renard (addresse ci-dessous) à partir de 15h pour commencer avec le vin d'honneur. Il sera bien entendu suivi d'un dîner bien sympatique et d'une petite soirée déjantée.",
+            "en": "After the ceremony, join us at La Ferme du Renard (address below) from 3:00 PM starting with the welcome drink. This will of course be followed by a lovely dinner and a fun-filled party."
+        },
+        "address": "Rue Pierre Renard 10, 1350 Orp-Jauche, Belgique"
+    },
+    {
+        "section": "party",
+        "title": {
+            "fr": "La fête",
+            "en": "The Party"
+        },
+        "message": {
+            "fr": "La soirée déjantée se déroulera à la Ferme du Renard (addresse ci-dessous) à partir de 20h.",
+            "en": "The fun-filled party will take place at La Ferme du Renard (address below) starting at 8:00 PM."
+        },
+        "address": "Rue Pierre Renard 10, 1350 Orp-Jauche, Belgique"
+    },
+    {
+        "section": "gift",
+        "title": {
+            "fr": "Le cadeau",
+            "en": "The gift"
+        },
+        "message": {
+            "fr": "Nous nous rendons bien compte que certains d'entre vous voudront nous gâter, et bien que cela ne soit pas du tout nécessaire, nous vous en remercion !\nNous avons donc mis en place une petite liste de mariage sur Kadolog, le lien est juste en dessous si vous le souhaitez.",
+            "en": "We understand that some of you may want to spoil us, and although it's not at all necessary, we thank you!\nWe have set up a small wedding registry on Kadolog, the link is just below if you wish."
+        },
+        "link": {
+            "label": {
+                "fr": "Liste de Mariage",
+                "en": "Wedding Registry"
+            },
+            "url": {
+                "fr": "https://www.kadolog.com/fr/list/liste-de-mariage-de-yannick-julie-1652951",
+                "en": "https://www.kadolog.com/en/list/liste-de-mariage-de-yannick-julie-1652951"
+            }
+        }
+    },
+    {
+        "section": "faq",
+        "title": {
+            "fr": "Foire aux questions",
+            "en": "Frequently asked questions"
+        },
+        "qanda": [
+            {
+                "q": {
+                    "fr": "Où puis-je me garer ?",
+                    "en": "Where can I park?"
+                },
+                "a": {
+                    "fr": "Pour la cérémonie, il y a le parking de la maison communale et de l'école à côté contenant suffisamment de place pour tout le monde.\nAprès la cérémonie, la Ferme du Renard propose également une section parking qui vous permettra de vous garer sans soucis.",
+                    "en": "For the ceremony, there is parking at the town hall and the school next door with enough space for everyone.\nAfter the ceremony, La Ferme du Renard also has a parking section that will allow you to park without any worries."
+                }
+            },
+            {
+                "q": {
+                    "fr": "Y a-t-il des gîtes ou chambres d'hôtes dans le coin ?",
+                    "en": "Are there accommodations/guesthouses nearby?"
+                },
+                "a": {
+                    "fr": "Oui il existe quelques options, voici un lien vers le site Booking.com reprenant une liste de disponibilités dans les allentours.",
+                    "en": "Yes, there are several options. Here's a link to Booking.com showing a list of availabilities in the area."
+                },
+                "link": {
+                    "label": {
+                        "fr": "Options de locations",
+                        "en": "Renting option"
+                    },
+                    "url": {
+                        "fr": "https://www.booking.com/searchresults.fr.html?ss=Helecine&ssne=Helecine&ssne_untouched=Helecine&efdco=1&label=gen173nr-1BCAEoggI46AdIM1gEaBWIAQGYAQ24AQfIAQzYAQHoAQGIAgGoAgO4AvXWq70GwAIB0gIkYTc2ZjcyYWMtZmE4OC00YmRkLWI1NzctNWY3YmI4MzM1ZDlh2AIF4AIB&sid=e55e904692400ae3513691d0b5a470c3&aid=304142&lang=fr&sb=1&src_elem=sb&src=index&dest_id=900056129&dest_type=city&checkin=2025-08-30&checkout=2025-08-31&group_adults=1&no_rooms=1&group_children=0",
+                        "en": "https://www.booking.com/searchresults.html?ss=Helecine&ssne=Helecine&ssne_untouched=Helecine&efdco=1&label=gen173nr-1BCAEoggI46AdIM1gEaBWIAQGYAQ24AQfIAQzYAQHoAQGIAgGoAgO4AvXWq70GwAIB0gIkYTc2ZjcyYWMtZmE4OC00YmRkLWI1NzctNWY3YmI4MzM1ZDlh2AIF4AIB&sid=e55e904692400ae3513691d0b5a470c3&aid=304142&lang=en-us&sb=1&src_elem=sb&src=index&dest_id=900056129&dest_type=city&checkin=2025-08-30&checkout=2025-08-31&group_adults=1&no_rooms=1&group_children=0"
+                    }
+                }
+            },
+            {
+                "q": {
+                    "fr": "Peut-on prendre des photos ?",
+                    "en": "Can we take photos?"
+                },
+                "a": {
+                    "fr": "Absolument, vous pouvez prendre des photos et nous mettrons quelque chose en place pour que tout le monde puisse les partager si ils en ont envie.",
+                    "en": "Absolutely, you can take photos and we will set up something so that everyone can share them if they want."
+                }
+            }
+        ]
+    },
+    {
+        "section": "contact",
+        "title": {
+            "fr": "Contactez-nous",
+            "en": "Contact us"
+        },
+        "message": {
+            "fr": "Pour toute question, n'hésitez pas à nous contacter !",
+            "en": "If you have any questions, please don't hesitate to contact us!"
+        },
+        "email": "mariage@lemin.be",
+        "phone": [
+            {
+                "label": "Yann",
+                "number": "+32496476177"
+            },
+            {
+                "label": "Julie",
+                "number": "+32479540201"
+            }
+        ]
+    }
+]
