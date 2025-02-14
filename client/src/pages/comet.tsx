@@ -5,19 +5,19 @@ import { MapLink } from "@/components/MapLink";
 import { Button } from "@/components/ui/button";
 
 export default function CometPage() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const guestType = "c";
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
       <CountdownTimer />
-      
+
       <h1 className="text-4xl md:text-6xl text-center gradient-text my-8">
         {t('mainTitle.title')}
       </h1>
 
       <div className="space-y-8">
-        <Section title={t('welcome.message')}>
+        <Section title={t('welcome.title')}>
           <p className="text-gray-700">{t('welcome.message')}</p>
         </Section>
 
@@ -26,7 +26,7 @@ export default function CometPage() {
           <p className="mb-4 text-pink-600">{t('rsvp.deadline')}</p>
           <Button
             className="w-full"
-            onClick={() => window.open(t('rsvp.link.url[2].fr'), '_blank')}
+            onClick={() => window.open(t(`rsvp.link.url.2.${i18n.language}`), '_blank')}
           >
             {t('rsvp.link.label')}
           </Button>
@@ -34,7 +34,7 @@ export default function CometPage() {
 
         <Section title={t('program.title')}>
           <pre className="whitespace-pre-wrap">
-            {t('program.message[2].fr')}
+            {t(`program.message.2.${i18n.language}`)}
           </pre>
         </Section>
 
@@ -48,7 +48,7 @@ export default function CometPage() {
           <Button
             variant="outline"
             className="w-full"
-            onClick={() => window.open(t('gift.link.url.fr'), '_blank')}
+            onClick={() => window.open(t(`gift.link.url.${i18n.language}`), '_blank')}
           >
             {t('gift.link.label')}
           </Button>

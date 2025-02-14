@@ -4,20 +4,31 @@ import { Section } from "@/components/Section";
 import { MapLink } from "@/components/MapLink";
 import { Button } from "@/components/ui/button";
 
+interface FAQ {
+  q: { fr: string; en: string };
+  a: { fr: string; en: string };
+  link?: {
+    label: { fr: string; en: string };
+    url: { fr: string; en: string };
+  };
+}
+
 export default function BinaryPage() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const guestType = "b";
+
+  const faqData = (t('faq.qanda', { returnObjects: true }) || []) as FAQ[];
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
       <CountdownTimer />
-      
+
       <h1 className="text-4xl md:text-6xl text-center gradient-text my-8">
         {t('mainTitle.title')}
       </h1>
 
       <div className="space-y-8">
-        <Section title={t('welcome.message')}>
+        <Section title="Welcome">
           <p className="text-gray-700">{t('welcome.message')}</p>
         </Section>
 
@@ -26,7 +37,7 @@ export default function BinaryPage() {
           <p className="mb-4 text-pink-600">{t('rsvp.deadline')}</p>
           <Button
             className="w-full"
-            onClick={() => window.open(t('rsvp.link.url[1].fr'), '_blank')}
+            onClick={() => window.open(t(`rsvp.link.url.${guestType === 'b' ? '1' : '0'}.${i18n.language}`), '_blank')}
           >
             {t('rsvp.link.label')}
           </Button>
@@ -34,7 +45,7 @@ export default function BinaryPage() {
 
         <Section title={t('program.title')}>
           <pre className="whitespace-pre-wrap">
-            {t('program.message[1].fr')}
+            {t(`program.message.${guestType === 'b' ? '1' : '0'}.${i18n.language}`)}
           </pre>
         </Section>
 
@@ -48,19 +59,30 @@ export default function BinaryPage() {
           <Button
             variant="outline"
             className="w-full"
-            onClick={() => window.open(t('gift.link.url.fr'), '_blank')}
+            onClick={() => window.open(t(`gift.link.url.${i18n.language}`), '_blank')}
           >
             {t('gift.link.label')}
           </Button>
         </Section>
 
         <Section title={t('faq.title')}>
-          {t('faq.qanda', { returnObjects: true }).map((qa: any, index: number) => (
-            <div key={index} className="mb-4">
-              <h3 className="font-bold mb-2">{qa.q}</h3>
-              <p>{qa.a}</p>
-            </div>
-          ))}
+          <div className="space-y-6">
+            {Array.isArray(faqData) && faqData.map((qa, index) => (
+              <div key={index} className="mb-4">
+                <h3 className="font-bold mb-2">{qa.q[i18n.language as keyof typeof qa.q]}</h3>
+                <p>{qa.a[i18n.language as keyof typeof qa.a]}</p>
+                {qa.link && (
+                  <Button
+                    variant="outline"
+                    className="w-full mt-2"
+                    onClick={() => window.open(qa.link?.url[i18n.language as keyof typeof qa.link.url], '_blank')}
+                  >
+                    {qa.link.label[i18n.language as keyof typeof qa.link.label]}
+                  </Button>
+                )}
+              </div>
+            ))}
+          </div>
         </Section>
 
         <Section title={t('contact.title')}>
