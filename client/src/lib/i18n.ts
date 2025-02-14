@@ -2,33 +2,41 @@ import i18next from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import translations from '../../../attached_assets/i18n.json';
 
-type TranslationSection = {
-  section: string;
-  [key: string]: any;
-};
-
 const resources = {
-  en: {} as Record<string, Record<string, any>>,
-  fr: {} as Record<string, Record<string, any>>
+  en: {
+    translation: {}
+  },
+  fr: {
+    translation: {}
+  }
 };
 
 // Transform the translations into i18next format
-translations.forEach((section: TranslationSection) => {
-  // Initialize the section if it doesn't exist
-  if (!resources.en[section.section]) {
-    resources.en[section.section] = {};
-    resources.fr[section.section] = {};
-  }
+translations.forEach((section) => {
+  const sectionName = section.section;
 
   Object.entries(section).forEach(([key, value]) => {
-    if (key !== 'section' && typeof value === 'object' && value !== null) {
-      if ('fr' in value || 'en' in value) {
-        resources.en[section.section][key] = value.en;
-        resources.fr[section.section][key] = value.fr;
-      } else if (Array.isArray(value)) {
-        // Handle arrays (like FAQ questions or program messages)
-        resources.en[section.section][key] = value;
-        resources.fr[section.section][key] = value;
+    if (key === 'section') return;
+
+    if (typeof value === 'object' && value !== null) {
+      // Handle direct translations (en/fr objects)
+      if ('en' in value && 'fr' in value) {
+        resources.en.translation[`${sectionName}.${key}`] = value.en;
+        resources.fr.translation[`${sectionName}.${key}`] = value.fr;
+      }
+      // Handle arrays (like FAQ questions or program messages)
+      else if (Array.isArray(value)) {
+        resources.en.translation[`${sectionName}.${key}`] = value;
+        resources.fr.translation[`${sectionName}.${key}`] = value;
+      }
+      // Handle nested objects (like links)
+      else {
+        Object.entries(value).forEach(([nestedKey, nestedValue]) => {
+          if (typeof nestedValue === 'object' && nestedValue !== null) {
+            resources.en.translation[`${sectionName}.${key}.${nestedKey}`] = nestedValue.en;
+            resources.fr.translation[`${sectionName}.${key}.${nestedKey}`] = nestedValue.fr;
+          }
+        });
       }
     }
   });
@@ -43,7 +51,7 @@ i18next
     interpolation: {
       escapeValue: false
     },
-    returnObjects: true // Enable returning objects for array translations
+    returnObjects: true
   });
 
 export default i18next;

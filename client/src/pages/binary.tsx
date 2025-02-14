@@ -4,20 +4,9 @@ import { Section } from "@/components/Section";
 import { MapLink } from "@/components/MapLink";
 import { Button } from "@/components/ui/button";
 
-interface FAQ {
-  q: { fr: string; en: string };
-  a: { fr: string; en: string };
-  link?: {
-    label: { fr: string; en: string };
-    url: { fr: string; en: string };
-  };
-}
-
 export default function BinaryPage() {
   const { t, i18n } = useTranslation();
   const guestType = "b";
-
-  const faqData = (t('faq.qanda', { returnObjects: true }) || []) as FAQ[];
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
@@ -37,7 +26,10 @@ export default function BinaryPage() {
           <p className="mb-4 text-pink-600">{t('rsvp.deadline')}</p>
           <Button
             className="w-full"
-            onClick={() => window.open(t(`rsvp.link.url.${guestType === 'b' ? '1' : '0'}.${i18n.language}`), '_blank')}
+            onClick={() => {
+              const linkUrl = t('rsvp.link.url')[1][i18n.language];
+              window.open(linkUrl, '_blank');
+            }}
           >
             {t('rsvp.link.label')}
           </Button>
@@ -45,7 +37,7 @@ export default function BinaryPage() {
 
         <Section title={t('program.title')}>
           <pre className="whitespace-pre-wrap">
-            {t(`program.message.${guestType === 'b' ? '1' : '0'}.${i18n.language}`)}
+            {t('program.message')[1][i18n.language]}
           </pre>
         </Section>
 
@@ -59,7 +51,7 @@ export default function BinaryPage() {
           <Button
             variant="outline"
             className="w-full"
-            onClick={() => window.open(t(`gift.link.url.${i18n.language}`), '_blank')}
+            onClick={() => window.open(t('gift.link.url')[i18n.language], '_blank')}
           >
             {t('gift.link.label')}
           </Button>
@@ -67,17 +59,17 @@ export default function BinaryPage() {
 
         <Section title={t('faq.title')}>
           <div className="space-y-6">
-            {Array.isArray(faqData) && faqData.map((qa, index) => (
+            {(t('faq.qanda', { returnObjects: true }) as any[]).map((qa, index) => (
               <div key={index} className="mb-4">
-                <h3 className="font-bold mb-2">{qa.q[i18n.language as keyof typeof qa.q]}</h3>
-                <p>{qa.a[i18n.language as keyof typeof qa.a]}</p>
+                <h3 className="font-bold mb-2">{qa.q[i18n.language]}</h3>
+                <p>{qa.a[i18n.language]}</p>
                 {qa.link && (
                   <Button
                     variant="outline"
                     className="w-full mt-2"
-                    onClick={() => window.open(qa.link?.url[i18n.language as keyof typeof qa.link.url], '_blank')}
+                    onClick={() => window.open(qa.link.url[i18n.language], '_blank')}
                   >
-                    {qa.link.label[i18n.language as keyof typeof qa.link.label]}
+                    {qa.link.label[i18n.language]}
                   </Button>
                 )}
               </div>
@@ -88,8 +80,8 @@ export default function BinaryPage() {
         <Section title={t('contact.title')}>
           <p className="mb-4">{t('contact.message')}</p>
           <p>Email: {t('contact.email')}</p>
-          <p>Yann: {t('contact.phone[0].number')}</p>
-          <p>Julie: {t('contact.phone[1].number')}</p>
+          <p>Yann: {t('contact.phone')[0].number}</p>
+          <p>Julie: {t('contact.phone')[1].number}</p>
         </Section>
       </div>
     </div>
