@@ -24,17 +24,30 @@ translations.forEach((section) => {
         resources.en.translation[`${sectionName}.${key}`] = value.en;
         resources.fr.translation[`${sectionName}.${key}`] = value.fr;
       }
-      // Handle arrays (like FAQ questions or program messages)
+      // Handle arrays with nested translations
       else if (Array.isArray(value)) {
-        resources.en.translation[`${sectionName}.${key}`] = value;
-        resources.fr.translation[`${sectionName}.${key}`] = value;
+        if (key === 'message:') { // Handle program messages
+          resources.en.translation[`${sectionName}.message`] = value;
+          resources.fr.translation[`${sectionName}.message`] = value;
+        } else { // Handle other arrays
+          resources.en.translation[`${sectionName}.${key}`] = value;
+          resources.fr.translation[`${sectionName}.${key}`] = value;
+        }
       }
       // Handle nested objects (like links)
       else {
         Object.entries(value).forEach(([nestedKey, nestedValue]) => {
           if (typeof nestedValue === 'object' && nestedValue !== null) {
-            resources.en.translation[`${sectionName}.${key}.${nestedKey}`] = nestedValue.en;
-            resources.fr.translation[`${sectionName}.${key}.${nestedKey}`] = nestedValue.fr;
+            if ('en' in nestedValue && 'fr' in nestedValue) {
+              resources.en.translation[`${sectionName}.${key}.${nestedKey}`] = nestedValue.en;
+              resources.fr.translation[`${sectionName}.${key}.${nestedKey}`] = nestedValue.fr;
+            } else {
+              resources.en.translation[`${sectionName}.${key}.${nestedKey}`] = nestedValue;
+              resources.fr.translation[`${sectionName}.${key}.${nestedKey}`] = nestedValue;
+            }
+          } else {
+            resources.en.translation[`${sectionName}.${key}.${nestedKey}`] = nestedValue;
+            resources.fr.translation[`${sectionName}.${key}.${nestedKey}`] = nestedValue;
           }
         });
       }

@@ -17,7 +17,7 @@ export default function BinaryPage() {
       </h1>
 
       <div className="space-y-8">
-        <Section title="Welcome">
+        <Section title={t('welcome.title', 'Welcome')}>
           <p className="text-gray-700">{t('welcome.message')}</p>
         </Section>
 
@@ -27,8 +27,11 @@ export default function BinaryPage() {
           <Button
             className="w-full"
             onClick={() => {
-              const linkUrl = t('rsvp.link.url')[1][i18n.language];
-              window.open(linkUrl, '_blank');
+              const rsvpLinks = t('rsvp.link.url', { returnObjects: true });
+              const link = rsvpLinks.find(l => l.guestType === guestType);
+              if (link) {
+                window.open(link[i18n.language], '_blank');
+              }
             }}
           >
             {t('rsvp.link.label')}
@@ -37,7 +40,8 @@ export default function BinaryPage() {
 
         <Section title={t('program.title')}>
           <pre className="whitespace-pre-wrap">
-            {t('program.message')[1][i18n.language]}
+            {t('program.message', { returnObjects: true })
+              .find((m: any) => m.guestType === guestType)?.[i18n.language]}
           </pre>
         </Section>
 

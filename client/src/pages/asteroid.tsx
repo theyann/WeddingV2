@@ -17,7 +17,7 @@ export default function AsteroidPage() {
       </h1>
 
       <div className="space-y-8">
-        <Section title={t('welcome.title')}>
+        <Section title={t('welcome.title', 'Welcome')}>
           <p className="text-gray-700">{t('welcome.message')}</p>
         </Section>
 
@@ -26,7 +26,13 @@ export default function AsteroidPage() {
           <p className="mb-4 text-pink-600">{t('rsvp.deadline')}</p>
           <Button
             className="w-full"
-            onClick={() => window.open(t(`rsvp.link.url.0.${i18n.language}`), '_blank')}
+            onClick={() => {
+              const rsvpLinks = t('rsvp.link.url', { returnObjects: true });
+              const link = rsvpLinks.find(l => l.guestType === guestType);
+              if (link) {
+                window.open(link[i18n.language], '_blank');
+              }
+            }}
           >
             {t('rsvp.link.label')}
           </Button>
@@ -34,7 +40,8 @@ export default function AsteroidPage() {
 
         <Section title={t('program.title')}>
           <pre className="whitespace-pre-wrap">
-            {t(`program.message.0.${i18n.language}`)}
+            {t('program.message:', { returnObjects: true })
+              .find((m: any) => m.guestType === guestType)?.[i18n.language]}
           </pre>
         </Section>
 
@@ -43,12 +50,17 @@ export default function AsteroidPage() {
           <MapLink address={t('ceremony.address')} />
         </Section>
 
+        <Section title={t('drink.title')}>
+          <p className="mb-4">{t('drink.message')}</p>
+          <MapLink address={t('drink.address')} />
+        </Section>
+
         <Section title={t('gift.title')}>
           <p className="mb-4">{t('gift.message')}</p>
           <Button
             variant="outline"
             className="w-full"
-            onClick={() => window.open(t(`gift.link.url.${i18n.language}`), '_blank')}
+            onClick={() => window.open(t('gift.link.url')[i18n.language], '_blank')}
           >
             {t('gift.link.label')}
           </Button>
@@ -57,8 +69,8 @@ export default function AsteroidPage() {
         <Section title={t('contact.title')}>
           <p className="mb-4">{t('contact.message')}</p>
           <p>Email: {t('contact.email')}</p>
-          <p>Yann: {t('contact.phone[0].number')}</p>
-          <p>Julie: {t('contact.phone[1].number')}</p>
+          <p>Yann: {t('contact.phone')[0].number}</p>
+          <p>Julie: {t('contact.phone')[1].number}</p>
         </Section>
       </div>
     </div>
