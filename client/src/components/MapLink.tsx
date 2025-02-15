@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { MapPin } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface MapLinkProps {
   address: string;
@@ -18,9 +19,18 @@ export function MapLink({ address }: MapLinkProps) {
   };
 
   return (
-    <Button variant="outline" onClick={handleClick} className="w-full mt-2">
-      <MapPin className="mr-2 h-4 w-4" />
-      <span className="text-sm truncate">{address}</span>
-    </Button>
+    <motion.div
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.98 }}
+    >
+      <Button 
+        variant="outline" 
+        onClick={handleClick} 
+        className="w-full mt-2 gradient-border bg-white hover:bg-white/90 transition-all duration-300"
+      >
+        <MapPin className="mr-2 h-4 w-4 text-pink-500" />
+        <span className="text-sm truncate gradient-text">{address}</span>
+      </Button>
+    </motion.div>
   );
 }

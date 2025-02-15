@@ -64,13 +64,18 @@ export default function CometPage() {
 
         <Section title={t('gift.title')}>
           <p className="mb-4">{t('gift.message')}</p>
-          <Button
-            variant="outline"
-            className="w-full"
-            onClick={() => window.open(t('gift.link.url')[i18n.language], '_blank')}
+          <motion.div
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
           >
-            {t('gift.link.label')}
-          </Button>
+            <Button
+              variant="outline"
+              className="w-full gradient-border bg-white hover:bg-white/90 transition-all duration-300"
+              onClick={() => window.open(t('gift.link.url')[i18n.language], '_blank')}
+            >
+              <span className="gradient-text">{t('gift.link.label')}</span>
+            </Button>
+          </motion.div>
         </Section>
 
         <Section title={t('faq.title')}>
