@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Mulish:wght@300;400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,7 +9,7 @@
   }
 
   body {
-    @apply font-['Lato'] antialiased text-foreground min-h-screen;
+    @apply font-['Mulish'] antialiased text-foreground min-h-screen;
     background-color: #fff;
     background-image: 
       radial-gradient(circle at 100% 100%, rgba(236, 72, 153, 0.3) 0, transparent 70%),
@@ -76,11 +76,11 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-['Cormorant_Garamond'];
+    @apply font-['Playfair_Display'] leading-relaxed;
   }
 
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-600 font-bold font-['Cormorant_Garamond'];
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-600 font-bold font-['Playfair_Display'];
   }
 
   .gradient-border {
