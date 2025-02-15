@@ -89,7 +89,7 @@
             "en": "Ceremony"
         },
         "message": {
-            "fr": "La cérémonie se déroulera à la maison communale d'Hélécine à partir de 14h. (voir addresse ci-dessous)",
+            "fr": "La cérémonie se déroulera à la maison communale d'Hélécine à partir de 14h. (voir adresse ci-dessous)",
             "en": "The ceremony will take place at the Hélécine town hall starting at 2:00 PM. (see address below)"
         },
         "address": "Rue le Brouc 2, 1357 Hélécine, Belgique"
@@ -101,7 +101,7 @@
             "en": "Welcome drink"
         },
         "message": {
-            "fr": "Après la cérémonie, un vin d'honneur sera servi à la Ferme du Renard (addresse ci-dessous) à partir de 15h.",
+            "fr": "Après la cérémonie, un vin d'honneur sera servi à la Ferme du Renard (adresse ci-dessous) à partir de 15h.",
             "en": "After the ceremony, a welcome drink will be served at La Ferme du Renard (address below) starting at 3:00 PM."
         },
         "address": "Rue Pierre Renard 10, 1350 Orp-Jauche, Belgique"
@@ -113,7 +113,7 @@
             "en": "The Festivities"
         },
         "message": {
-            "fr": "Après la cérémonie, rendez-vous à la Ferme du Renard (addresse ci-dessous) à partir de 15h pour commencer avec le vin d'honneur. Il sera bien entendu suivi d'un dîner bien sympatique et d'une petite soirée déjantée.",
+            "fr": "Après la cérémonie, rendez-vous à la Ferme du Renard (adresse ci-dessous) à partir de 15h pour commencer avec le vin d'honneur. Il sera bien entendu suivi d'un dîner bien sympatique et d'une petite soirée déjantée.",
             "en": "After the ceremony, join us at La Ferme du Renard (address below) from 3:00 PM starting with the welcome drink. This will of course be followed by a lovely dinner and a fun-filled party."
         },
         "address": "Rue Pierre Renard 10, 1350 Orp-Jauche, Belgique"
@@ -125,7 +125,7 @@
             "en": "The Party"
         },
         "message": {
-            "fr": "La soirée déjantée se déroulera à la Ferme du Renard (addresse ci-dessous) à partir de 20h.",
+            "fr": "La soirée déjantée se déroulera à la Ferme du Renard (adresse ci-dessous) à partir de 20h.",
             "en": "The fun-filled party will take place at La Ferme du Renard (address below) starting at 8:00 PM."
         },
         "address": "Rue Pierre Renard 10, 1350 Orp-Jauche, Belgique"
