@@ -76,7 +76,7 @@ export default function AsteroidPage() {
             <Button
               variant="outline"
               className="w-full gradient-border bg-pink-600 hover:bg-pink-500 transition-all duration-300"
-              onClick={() => window.open(t('gift.link.url')[i18n.language], '_blank')}
+              onClick={() => window.open(t('gift.link.url'), '_blank')}
             >
               <span className="text-white">{t('gift.link.label')}</span>
             </Button>
