@@ -35,11 +35,11 @@ export default function BinaryPage() {
       </motion.h1>
 
       <div className="space-y-8">
-        <Section title="Welcome" delay={0.3}>
+        <Section title="Welcome">
           <p className="text-gray-700">{t('welcome.message')}</p>
         </Section>
 
-        <Section title={t('rsvp.title')} delay={0.4}>
+        <Section title={t('rsvp.title')}>
           <p className="mb-4">{t('rsvp.message')}</p>
           <p className="mb-4 text-pink-600">{t('rsvp.deadline')}</p>
           <Button
@@ -50,23 +50,23 @@ export default function BinaryPage() {
           </Button>
         </Section>
 
-        <Section title={t('program.title')} delay={0.5}>
+        <Section title={t('program.title')}>
           <pre className="whitespace-pre-wrap">
             {programMessage}
           </pre>
         </Section>
 
-        <Section title={t('ceremony.title')} delay={0.6}>
+        <Section title={t('ceremony.title')}>
           <p className="mb-4">{t('ceremony.message')}</p>
           <MapLink address={t('ceremony.address')} />
         </Section>
 
-        <Section title={t('festivities.title')} delay={0.7}>
+        <Section title={t('festivities.title')}>
           <p className="mb-4">{t('festivities.message')}</p>
           <MapLink address={t('festivities.address')} />
         </Section>
 
-        <Section title={t('gift.title')} delay={0.8}>
+        <Section title={t('gift.title')}>
           <p className="mb-4">{t('gift.message')}</p>
           <Button
             variant="outline"
@@ -77,7 +77,7 @@ export default function BinaryPage() {
           </Button>
         </Section>
 
-        <Section title={t('faq.title')} delay={0.9}>
+        <Section title={t('faq.title')}>
           <div className="space-y-6">
             {(t('faq.qanda', { returnObjects: true }) as any[]).map((qa: any, index: number) => (
               <div key={index} className="mb-4">
@@ -97,7 +97,7 @@ export default function BinaryPage() {
           </div>
         </Section>
 
-        <Section title={t('contact.title')} delay={1}>
+        <Section title={t('contact.title')}>
           <p className="mb-4">{t('contact.message')}</p>
           <p>Email: {t('contact.email')}</p>
           <p>Yann: {t('contact.phone.0.number')}</p>

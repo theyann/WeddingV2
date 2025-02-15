@@ -3,6 +3,7 @@ import { CountdownTimer } from "@/components/CountdownTimer";
 import { Section } from "@/components/Section";
 import { MapLink } from "@/components/MapLink";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 
 export default function AsteroidPage() {
   const { t, i18n } = useTranslation();
@@ -16,11 +17,22 @@ export default function AsteroidPage() {
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
-      <CountdownTimer />
+      <motion.div
+        initial={{ scale: 0.9, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
+        <CountdownTimer />
+      </motion.div>
 
-      <h1 className="text-4xl md:text-6xl text-center gradient-text my-8">
+      <motion.h1 
+        className="text-4xl md:text-6xl text-center gradient-text my-8"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
         {t('mainTitle.title')}
-      </h1>
+      </motion.h1>
 
       <div className="space-y-8">
         <Section title="Welcome">
