@@ -8,6 +8,12 @@ export default function AsteroidPage() {
   const { t, i18n } = useTranslation();
   const guestType = "a";
 
+  const programMessage = (t('program.message', { returnObjects: true }) as any[])
+    ?.find(m => m.guestType === guestType)?.[i18n.language] || '';
+
+  const rsvpLinks = t('rsvp.link.url', { returnObjects: true }) as any[];
+  const rsvpLink = rsvpLinks?.find(l => l.guestType === guestType)?.[i18n.language];
+
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
       <CountdownTimer />
@@ -17,7 +23,7 @@ export default function AsteroidPage() {
       </h1>
 
       <div className="space-y-8">
-        <Section title={t('welcome.title', 'Welcome')}>
+        <Section title="Welcome">
           <p className="text-gray-700">{t('welcome.message')}</p>
         </Section>
 
@@ -26,13 +32,7 @@ export default function AsteroidPage() {
           <p className="mb-4 text-pink-600">{t('rsvp.deadline')}</p>
           <Button
             className="w-full"
-            onClick={() => {
-              const rsvpLinks = t('rsvp.link.url', { returnObjects: true });
-              const link = rsvpLinks.find(l => l.guestType === guestType);
-              if (link) {
-                window.open(link[i18n.language], '_blank');
-              }
-            }}
+            onClick={() => rsvpLink && window.open(rsvpLink, '_blank')}
           >
             {t('rsvp.link.label')}
           </Button>
@@ -40,8 +40,7 @@ export default function AsteroidPage() {
 
         <Section title={t('program.title')}>
           <pre className="whitespace-pre-wrap">
-            {t('program.message', { returnObjects: true })
-              .find((m: any) => m.guestType === guestType)?.[i18n.language]}
+            {programMessage}
           </pre>
         </Section>
 
@@ -69,8 +68,8 @@ export default function AsteroidPage() {
         <Section title={t('contact.title')}>
           <p className="mb-4">{t('contact.message')}</p>
           <p>Email: {t('contact.email')}</p>
-          <p>Yann: {t('contact.phone')[0].number}</p>
-          <p>Julie: {t('contact.phone')[1].number}</p>
+          <p>Yann: {t('contact.phone.0.number')}</p>
+          <p>Julie: {t('contact.phone.1.number')}</p>
         </Section>
       </div>
     </div>

@@ -2,7 +2,11 @@ import i18next from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import translations from '../../../attached_assets/i18n.json';
 
-const resources = {
+type TranslationResources = {
+  translation: Record<string, any>;
+};
+
+const resources: { en: TranslationResources; fr: TranslationResources } = {
   en: {
     translation: {}
   },
@@ -18,36 +22,40 @@ translations.forEach((section) => {
   Object.entries(section).forEach(([key, value]) => {
     if (key === 'section') return;
 
-    if (typeof value === 'object' && value !== null) {
-      // Handle direct translations (en/fr objects)
+    if (typeof value === 'string') {
+      // Handle direct string values
+      resources.en.translation[`${sectionName}.${key}`] = value;
+      resources.fr.translation[`${sectionName}.${key}`] = value;
+    } else if (value && typeof value === 'object') {
       if ('en' in value && 'fr' in value) {
+        // Handle direct translations
         resources.en.translation[`${sectionName}.${key}`] = value.en;
         resources.fr.translation[`${sectionName}.${key}`] = value.fr;
-      }
-      // Handle arrays with nested translations
-      else if (Array.isArray(value)) {
-        if (key === 'message:') { // Handle program messages
+      } else if (Array.isArray(value)) {
+        if (key === 'message:') {
+          // Fix the typo in the key name for program messages
           resources.en.translation[`${sectionName}.message`] = value;
           resources.fr.translation[`${sectionName}.message`] = value;
-        } else { // Handle other arrays
+        } else {
+          // Handle arrays (like phone numbers)
           resources.en.translation[`${sectionName}.${key}`] = value;
           resources.fr.translation[`${sectionName}.${key}`] = value;
         }
-      }
-      // Handle nested objects (like links)
-      else {
+      } else {
+        // Handle nested objects
         Object.entries(value).forEach(([nestedKey, nestedValue]) => {
-          if (typeof nestedValue === 'object' && nestedValue !== null) {
+          const fullKey = `${sectionName}.${key}.${nestedKey}`;
+          if (nestedValue && typeof nestedValue === 'object') {
             if ('en' in nestedValue && 'fr' in nestedValue) {
-              resources.en.translation[`${sectionName}.${key}.${nestedKey}`] = nestedValue.en;
-              resources.fr.translation[`${sectionName}.${key}.${nestedKey}`] = nestedValue.fr;
+              resources.en.translation[fullKey] = nestedValue.en;
+              resources.fr.translation[fullKey] = nestedValue.fr;
             } else {
-              resources.en.translation[`${sectionName}.${key}.${nestedKey}`] = nestedValue;
-              resources.fr.translation[`${sectionName}.${key}.${nestedKey}`] = nestedValue;
+              resources.en.translation[fullKey] = nestedValue;
+              resources.fr.translation[fullKey] = nestedValue;
             }
           } else {
-            resources.en.translation[`${sectionName}.${key}.${nestedKey}`] = nestedValue;
-            resources.fr.translation[`${sectionName}.${key}.${nestedKey}`] = nestedValue;
+            resources.en.translation[fullKey] = nestedValue;
+            resources.fr.translation[fullKey] = nestedValue;
           }
         });
       }
