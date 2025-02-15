@@ -4,6 +4,7 @@ import { Section } from "@/components/Section";
 import { MapLink } from "@/components/MapLink";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { FAQAccordion } from "@/components/FAQAccordion";
 
 export default function AsteroidPage() {
   const { t, i18n } = useTranslation();
@@ -78,23 +79,10 @@ export default function AsteroidPage() {
         </Section>
 
         <Section title={t('faq.title')}>
-          <div className="space-y-6">
-            {(t('faq.qanda', { returnObjects: true }) as any[]).map((qa: any, index: number) => (
-              <div key={index} className="mb-4">
-                <h3 className="font-bold mb-2">{qa.q[i18n.language]}</h3>
-                <p className="text-gray-700 mb-2">{qa.a[i18n.language]}</p>
-                {qa.link && (
-                  <Button
-                    variant="outline"
-                    className="w-full mt-2"
-                    onClick={() => window.open(qa.link.url[i18n.language], '_blank')}
-                  >
-                    {qa.link.label[i18n.language]}
-                  </Button>
-                )}
-              </div>
-            ))}
-          </div>
+          <FAQAccordion
+            items={t('faq.qanda', { returnObjects: true }) as any[]}
+            language={i18n.language}
+          />
         </Section>
 
         <Section title={t('contact.title')}>
