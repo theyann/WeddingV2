@@ -52,9 +52,9 @@ export default function BinaryPage() {
         </Section>
 
         <Section title={t('program.title')}>
-          <pre className="whitespace-pre-wrap">
+          <div className="program-text">
             {programMessage}
-          </pre>
+          </div>
         </Section>
 
         <Section title={t('ceremony.title')}>

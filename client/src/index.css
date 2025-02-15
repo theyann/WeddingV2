@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
 @layer base {
   * {
     @apply border-border;
@@ -17,5 +19,9 @@
 
   .gradient-border {
     @apply border-2 border-transparent bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-border;
+  }
+
+  .program-text {
+    @apply font-['Space_Mono'] text-gray-800 leading-relaxed tracking-wide whitespace-pre-wrap;
   }
 }
