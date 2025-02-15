@@ -9,12 +9,34 @@ interface MapLinkProps {
 export function MapLink({ address }: MapLinkProps) {
   const handleClick = () => {
     const encodedAddress = encodeURIComponent(address);
-    const mobileOS = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    const isAndroid = /Android/.test(navigator.userAgent);
 
-    if (mobileOS) {
-      window.location.href = `geo:0,0?q=${encodedAddress}`;
-    } else {
-      window.open(`https://www.google.com/maps/search/?api=1&query=${encodedAddress}`, '_blank');
+    // Universal Google Maps URL that works on all platforms
+    const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodedAddress}`;
+
+    try {
+      if (isIOS) {
+        // iOS uses maps:// scheme
+        window.location.href = `maps://?q=${encodedAddress}`;
+        // Fallback after a short delay if maps:// didn't work
+        setTimeout(() => {
+          window.location.href = googleMapsUrl;
+        }, 500);
+      } else if (isAndroid) {
+        // Android uses geo: scheme with fallback
+        window.location.href = `geo:0,0?q=${encodedAddress}`;
+        // Fallback after a short delay if geo: didn't work
+        setTimeout(() => {
+          window.location.href = googleMapsUrl;
+        }, 500);
+      } else {
+        // Desktop or unsupported mobile browser
+        window.open(googleMapsUrl, '_blank');
+      }
+    } catch (error) {
+      // Final fallback if anything goes wrong
+      window.open(googleMapsUrl, '_blank');
     }
   };
 
