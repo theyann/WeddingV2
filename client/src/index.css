@@ -1,8 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
 
 @layer base {
   * {
@@ -10,7 +9,7 @@
   }
 
   body {
-    @apply font-sans antialiased bg-gradient-to-br from-pink-50 via-white to-purple-50 text-foreground min-h-screen;
+    @apply font-['Space_Mono'] antialiased bg-gradient-to-br from-pink-50 via-white to-purple-50 text-foreground min-h-screen;
   }
 
   .gradient-text {
@@ -22,6 +21,6 @@
   }
 
   .program-text {
-    @apply font-['Space_Mono'] text-gray-800 leading-relaxed tracking-wide whitespace-pre-wrap;
+    @apply text-gray-800 leading-relaxed tracking-wide whitespace-pre-wrap;
   }
 }
