@@ -40,7 +40,7 @@ export default function AsteroidPage() {
 
         <Section title={t('program.title')}>
           <pre className="whitespace-pre-wrap">
-            {t('program.message:', { returnObjects: true })
+            {t('program.message', { returnObjects: true })
               .find((m: any) => m.guestType === guestType)?.[i18n.language]}
           </pre>
         </Section>

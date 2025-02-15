@@ -45,6 +45,11 @@ export default function BinaryPage() {
           </pre>
         </Section>
 
+        <Section title={t('ceremony.title')}>
+          <p className="mb-4">{t('ceremony.message')}</p>
+          <MapLink address={t('ceremony.address')} />
+        </Section>
+
         <Section title={t('festivities.title')}>
           <p className="mb-4">{t('festivities.message')}</p>
           <MapLink address={t('festivities.address')} />
