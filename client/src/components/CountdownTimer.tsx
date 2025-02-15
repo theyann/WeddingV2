@@ -38,7 +38,7 @@ export function CountdownTimer() {
     <Card className="bg-white/80 backdrop-blur">
       <CardContent className="pt-6">
         <motion.h2 
-          className="text-2xl text-center gradient-text mb-4"
+          className="text-2xl text-center gradient-text mb-4 pb-2"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}

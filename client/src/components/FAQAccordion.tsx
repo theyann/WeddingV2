@@ -33,11 +33,11 @@ export function FAQAccordion({ items, language }: FAQAccordionProps) {
     <Accordion type="single" collapsible className="w-full">
       {items.map((item, index) => (
         <AccordionItem key={index} value={`item-${index}`}>
-          <AccordionTrigger className="text-left font-bold hover:text-pink-600 transition-colors">
+          <AccordionTrigger className="text-left font-bold hover:text-pink-600 transition-colors pb-2">
             {item.q[language]}
           </AccordionTrigger>
           <AccordionContent>
-            <p className="text-gray-700 mb-2">{item.a[language]}</p>
+            <p className="text-gray-700 mb-4 leading-relaxed">{item.a[language]}</p>
             {item.link && (
               <Button
                 variant="outline"
