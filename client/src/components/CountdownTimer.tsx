@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 
 const WEDDING_DATE = new Date("2025-08-30T14:00:00");
 
 function calculateTimeLeft() {
   const difference = +WEDDING_DATE - +new Date();
-  
+
   if (difference > 0) {
     return {
       days: Math.floor(difference / (1000 * 60 * 60 * 24)),
@@ -15,7 +16,7 @@ function calculateTimeLeft() {
       seconds: Math.floor((difference / 1000) % 60)
     };
   }
-  
+
   return null;
 }
 
@@ -36,26 +37,33 @@ export function CountdownTimer() {
   return (
     <Card className="bg-white/80 backdrop-blur">
       <CardContent className="pt-6">
-        <h2 className="text-2xl text-center gradient-text mb-4">
+        <motion.h2 
+          className="text-2xl text-center gradient-text mb-4"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
           {t('countdown.title')}
-        </h2>
+        </motion.h2>
         <div className="grid grid-cols-4 gap-2 text-center">
-          <div>
-            <div className="text-3xl font-bold text-pink-600">{timeLeft.days}</div>
-            <div className="text-sm text-gray-600">Days</div>
-          </div>
-          <div>
-            <div className="text-3xl font-bold text-pink-600">{timeLeft.hours}</div>
-            <div className="text-sm text-gray-600">Hours</div>
-          </div>
-          <div>
-            <div className="text-3xl font-bold text-pink-600">{timeLeft.minutes}</div>
-            <div className="text-sm text-gray-600">Minutes</div>
-          </div>
-          <div>
-            <div className="text-3xl font-bold text-pink-600">{timeLeft.seconds}</div>
-            <div className="text-sm text-gray-600">Seconds</div>
-          </div>
+          {Object.entries(timeLeft).map(([unit, value], index) => (
+            <div key={unit}>
+              <motion.div 
+                className="text-3xl font-bold text-pink-600"
+                initial={{ scale: 1 }}
+                animate={{ scale: [1, 1.1, 1] }}
+                transition={{
+                  duration: 0.5,
+                  repeat: Infinity,
+                  repeatDelay: 1,
+                  delay: index * 0.1
+                }}
+              >
+                {value}
+              </motion.div>
+              <div className="text-sm text-gray-600 capitalize">{unit}</div>
+            </div>
+          ))}
         </div>
       </CardContent>
     </Card>

@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
 import { Languages } from "lucide-react";
+import { motion } from "framer-motion";
 
 export function LanguageSwitcher() {
   const { i18n } = useTranslation();
@@ -11,14 +12,21 @@ export function LanguageSwitcher() {
   };
 
   return (
-    <Button
-      variant="outline"
-      size="sm"
-      onClick={toggleLanguage}
-      className="fixed top-4 right-4 z-50"
+    <motion.div
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.5 }}
+      whileHover={{ scale: 1.05 }}
     >
-      <Languages className="mr-2 h-4 w-4" />
-      {i18n.language.toUpperCase()}
-    </Button>
+      <Button
+        variant="outline"
+        size="sm"
+        onClick={toggleLanguage}
+        className="fixed top-4 right-4 z-50"
+      >
+        <Languages className="mr-2 h-4 w-4" />
+        {i18n.language.toUpperCase()}
+      </Button>
+    </motion.div>
   );
 }

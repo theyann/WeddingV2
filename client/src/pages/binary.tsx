@@ -3,6 +3,7 @@ import { CountdownTimer } from "@/components/CountdownTimer";
 import { Section } from "@/components/Section";
 import { MapLink } from "@/components/MapLink";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 
 export default function BinaryPage() {
   const { t, i18n } = useTranslation();
@@ -16,18 +17,29 @@ export default function BinaryPage() {
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-4xl">
-      <CountdownTimer />
+      <motion.div
+        initial={{ scale: 0.9, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
+        <CountdownTimer />
+      </motion.div>
 
-      <h1 className="text-4xl md:text-6xl text-center gradient-text my-8">
+      <motion.h1 
+        className="text-4xl md:text-6xl text-center gradient-text my-8"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
         {t('mainTitle.title')}
-      </h1>
+      </motion.h1>
 
       <div className="space-y-8">
-        <Section title="Welcome">
+        <Section title="Welcome" delay={0.3}>
           <p className="text-gray-700">{t('welcome.message')}</p>
         </Section>
 
-        <Section title={t('rsvp.title')}>
+        <Section title={t('rsvp.title')} delay={0.4}>
           <p className="mb-4">{t('rsvp.message')}</p>
           <p className="mb-4 text-pink-600">{t('rsvp.deadline')}</p>
           <Button
@@ -38,23 +50,23 @@ export default function BinaryPage() {
           </Button>
         </Section>
 
-        <Section title={t('program.title')}>
+        <Section title={t('program.title')} delay={0.5}>
           <pre className="whitespace-pre-wrap">
             {programMessage}
           </pre>
         </Section>
 
-        <Section title={t('ceremony.title')}>
+        <Section title={t('ceremony.title')} delay={0.6}>
           <p className="mb-4">{t('ceremony.message')}</p>
           <MapLink address={t('ceremony.address')} />
         </Section>
 
-        <Section title={t('festivities.title')}>
+        <Section title={t('festivities.title')} delay={0.7}>
           <p className="mb-4">{t('festivities.message')}</p>
           <MapLink address={t('festivities.address')} />
         </Section>
 
-        <Section title={t('gift.title')}>
+        <Section title={t('gift.title')} delay={0.8}>
           <p className="mb-4">{t('gift.message')}</p>
           <Button
             variant="outline"
@@ -65,7 +77,7 @@ export default function BinaryPage() {
           </Button>
         </Section>
 
-        <Section title={t('faq.title')}>
+        <Section title={t('faq.title')} delay={0.9}>
           <div className="space-y-6">
             {(t('faq.qanda', { returnObjects: true }) as any[]).map((qa: any, index: number) => (
               <div key={index} className="mb-4">
@@ -85,7 +97,7 @@ export default function BinaryPage() {
           </div>
         </Section>
 
-        <Section title={t('contact.title')}>
+        <Section title={t('contact.title')} delay={1}>
           <p className="mb-4">{t('contact.message')}</p>
           <p>Email: {t('contact.email')}</p>
           <p>Yann: {t('contact.phone.0.number')}</p>
