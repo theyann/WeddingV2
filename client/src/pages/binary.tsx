@@ -5,6 +5,7 @@ import { MapLink } from "@/components/MapLink";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { FAQAccordion } from "@/components/FAQAccordion";
+import { ContactInfo } from "@/components/ContactInfo"; // Import the ContactInfo component
 
 export default function BinaryPage() {
   const { t, i18n } = useTranslation();
@@ -92,9 +93,10 @@ export default function BinaryPage() {
 
         <Section title={t('contact.title')}>
           <p className="mb-4">{t('contact.message')}</p>
-          <p>Email: {t('contact.email')}</p>
-          <p>Yann: {t('contact.phone.0.number')}</p>
-          <p>Julie: {t('contact.phone.1.number')}</p>
+          <ContactInfo
+            email={t('contact.email')}
+            phones={t('contact.phone', { returnObjects: true })}
+          />
         </Section>
       </div>
     </div>
