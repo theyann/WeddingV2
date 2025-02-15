@@ -24,8 +24,8 @@ export function Section({ title, children, className }: SectionProps) {
           className
         )}
       >
-        <CardHeader>
-          <CardTitle className="gradient-text text-center">{title}</CardTitle>
+        <CardHeader className="pb-8">
+          <CardTitle className="gradient-text text-center pb-2">{title}</CardTitle>
         </CardHeader>
         <CardContent>{children}</CardContent>
       </Card>
