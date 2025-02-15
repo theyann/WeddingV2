@@ -76,11 +76,11 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-['Playfair_Display'] leading-relaxed;
+    @apply font-['Playfair_Display'] leading-[1.4] tracking-wide;
   }
 
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-600 font-bold font-['Playfair_Display'];
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-600 font-bold font-['Playfair_Display'] leading-[1.4];
   }
 
   .gradient-border {

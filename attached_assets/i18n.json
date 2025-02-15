@@ -22,7 +22,7 @@
     },
     {
         "section": "rsvp",
-        "title":  {
+        "title": {
             "fr": "Confirmer votre présence",
             "en": "Confirm your attendance"
         },
@@ -137,8 +137,8 @@
             "en": "The gift"
         },
         "message": {
-            "fr": "Nous nous rendons bien compte que certains d'entre vous voudront nous gâter, et bien que cela ne soit pas du tout nécessaire, nous vous en remercion !\nNous avons donc mis en place une petite liste de mariage sur Kadolog, le lien est juste en dessous si vous le souhaitez.",
-            "en": "We understand that some of you may want to spoil us, and although it's not at all necessary, we thank you!\nWe have set up a small wedding registry on Kadolog, the link is just below if you wish."
+            "fr": "Si vous voulez vraiment nous gâter, bien que cela ne soit pas du tout nécessaire, nous avons mis en place une petite liste de mariage sur Kadolog, le lien est juste en dessous si vous le souhaitez.",
+            "en": "If you really want to spoil us, although it's not at all necessary, we have set up a small wedding registry on Kadolog, the link is just below if you wish."
         },
         "link": {
             "label": {
@@ -194,8 +194,18 @@
                     "en": "Can we take photos?"
                 },
                 "a": {
-                    "fr": "Absolument, vous pouvez prendre des photos et nous mettrons quelque chose en place pour que tout le monde puisse les partager si ils en ont envie.",
-                    "en": "Absolutely, you can take photos and we will set up something so that everyone can share them if they want."
+                    "fr": "Absolument, nous vous y encourageons (et même des vidéos !) et on espère bien que vous partagerez vos meilleurs clichés avec nous après la fête !",
+                    "en": "Absolutely, we encourage you to do so (and even videos!) and we hope you will share your best shots with us after the party!"
+                }
+            },
+            {
+                "q": {
+                    "fr": "Qui a fait ce site incroyable?",
+                    "en": "Who made this amazing site?"
+                },
+                "a": {
+                    "fr": "Ce site est le fruit de beaucoup beaucoup beaucoup de patience de la part de Yann qui voulait absolument faire faire ce site par une IA.",
+                    "en": "This site is the result of lots and lots and lots of patience from Yann who wanted to make this site by an AI tool."
                 }
             }
         ]
