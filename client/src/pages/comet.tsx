@@ -70,10 +70,10 @@ export default function CometPage() {
           >
             <Button
               variant="outline"
-              className="w-full gradient-border bg-white hover:bg-white/90 transition-all duration-300"
+              className="w-full gradient-border bg-white hover:bg-pink-50 transition-all duration-300"
               onClick={() => window.open(t('gift.link.url')[i18n.language], '_blank')}
             >
-              <span className="gradient-text">{t('gift.link.label')}</span>
+              <span className="text-pink-600">{t('gift.link.label')}</span>
             </Button>
           </motion.div>
         </Section>
