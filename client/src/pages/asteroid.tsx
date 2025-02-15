@@ -95,7 +95,7 @@ export default function AsteroidPage() {
           <p className="mb-4">{t('contact.message')}</p>
           <ContactInfo
             email={t('contact.email')}
-            phones={t('contact.phone', { returnObjects: true })}
+            phones={t('contact.phone', { returnObjects: true }) as Array<{ label: string; number: string }>}
           />
         </Section>
       </div>
