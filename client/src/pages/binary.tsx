@@ -67,10 +67,10 @@ export default function BinaryPage() {
 
         <Section title={t('faq.title')}>
           <div className="space-y-6">
-            {(t('faq.qanda', { returnObjects: true }) as any[]).map((qa, index) => (
+            {(t('faq.qanda', { returnObjects: true }) as any[]).map((qa: any, index: number) => (
               <div key={index} className="mb-4">
                 <h3 className="font-bold mb-2">{qa.q[i18n.language]}</h3>
-                <p>{qa.a[i18n.language]}</p>
+                <p className="text-gray-700 mb-2">{qa.a[i18n.language]}</p>
                 {qa.link && (
                   <Button
                     variant="outline"

@@ -65,6 +65,26 @@ export default function AsteroidPage() {
           </Button>
         </Section>
 
+        <Section title={t('faq.title')}>
+          <div className="space-y-6">
+            {(t('faq.qanda', { returnObjects: true }) as any[]).map((qa: any, index: number) => (
+              <div key={index} className="mb-4">
+                <h3 className="font-bold mb-2">{qa.q[i18n.language]}</h3>
+                <p className="text-gray-700 mb-2">{qa.a[i18n.language]}</p>
+                {qa.link && (
+                  <Button
+                    variant="outline"
+                    className="w-full mt-2"
+                    onClick={() => window.open(qa.link.url[i18n.language], '_blank')}
+                  >
+                    {qa.link.label[i18n.language]}
+                  </Button>
+                )}
+              </div>
+            ))}
+          </div>
+        </Section>
+
         <Section title={t('contact.title')}>
           <p className="mb-4">{t('contact.message')}</p>
           <p>Email: {t('contact.email')}</p>
