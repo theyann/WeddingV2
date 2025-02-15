@@ -75,10 +75,10 @@ export default function AsteroidPage() {
           >
             <Button
               variant="outline"
-              className="w-full gradient-border bg-white hover:bg-pink-50 transition-all duration-300"
+              className="w-full gradient-border bg-pink-600 hover:bg-pink-500 transition-all duration-300"
               onClick={() => window.open(t('gift.link.url')[i18n.language], '_blank')}
             >
-              <span className="text-pink-600">{t('gift.link.label')}</span>
+              <span className="text-white">{t('gift.link.label')}</span>
             </Button>
           </motion.div>
         </Section>

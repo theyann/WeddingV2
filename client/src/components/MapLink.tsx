@@ -26,10 +26,10 @@ export function MapLink({ address }: MapLinkProps) {
       <Button 
         variant="outline" 
         onClick={handleClick} 
-        className="w-full mt-2 gradient-border bg-white hover:bg-pink-50 transition-all duration-300"
+        className="w-full mt-2 gradient-border bg-pink-600 hover:bg-pink-500 transition-all duration-300"
       >
-        <MapPin className="mr-2 h-4 w-4 text-pink-500" />
-        <span className="text-sm truncate text-pink-600">{address}</span>
+        <MapPin className="mr-2 h-4 w-4 text-white" />
+        <span className="text-sm truncate text-white">{address}</span>
       </Button>
     </motion.div>
   );
