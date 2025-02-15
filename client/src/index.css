@@ -12,10 +12,10 @@
     @apply font-['Lato'] antialiased text-foreground min-h-screen;
     background-color: #fff;
     background-image: 
-      radial-gradient(circle at 100% 100%, rgba(236, 72, 153, 0.2) 0, transparent 60%),
-      radial-gradient(circle at 0% 0%, rgba(147, 51, 234, 0.2) 0, transparent 60%),
-      linear-gradient(to bottom right, rgba(236, 72, 153, 0.15) 0%, transparent),
-      linear-gradient(to top left, rgba(147, 51, 234, 0.15) 0%, transparent);
+      radial-gradient(circle at 100% 100%, rgba(236, 72, 153, 0.3) 0, transparent 70%),
+      radial-gradient(circle at 0% 0%, rgba(147, 51, 234, 0.3) 0, transparent 70%),
+      linear-gradient(to bottom right, rgba(236, 72, 153, 0.2) 0%, transparent),
+      linear-gradient(to top left, rgba(147, 51, 234, 0.2) 0%, transparent);
     background-attachment: fixed;
     position: relative;
   }
@@ -29,11 +29,11 @@
     bottom: 0;
     z-index: -1;
     background-image: 
-      radial-gradient(rgba(236, 72, 153, 0.15) 2px, transparent 2px),
-      radial-gradient(rgba(147, 51, 234, 0.15) 2px, transparent 2px);
-    background-size: 60px 60px;
-    background-position: 0 0, 30px 30px;
-    animation: moveBackground 60s linear infinite;
+      radial-gradient(rgba(236, 72, 153, 0.25) 3px, transparent 3px),
+      radial-gradient(rgba(147, 51, 234, 0.25) 3px, transparent 3px);
+    background-size: 80px 80px;
+    background-position: 0 0, 40px 40px;
+    animation: moveBackground 45s linear infinite;
   }
 
   body::after {
@@ -44,34 +44,34 @@
     right: 0;
     bottom: 0;
     z-index: -2;
-    opacity: 0.05;
-    font-size: 60px;
+    opacity: 0.08;
+    font-size: 80px;
     display: grid;
     place-items: center;
     transform: rotate(-45deg);
-    background-size: 120px 120px;
+    background-size: 160px 160px;
     background-position: center;
-    animation: floatHearts 30s linear infinite;
+    animation: floatHearts 20s ease-in-out infinite;
   }
 
   @keyframes moveBackground {
     0% {
-      background-position: 0 0, 30px 30px;
+      background-position: 0 0, 40px 40px;
     }
     100% {
-      background-position: 60px 60px, 90px 90px;
+      background-position: 80px 80px, 120px 120px;
     }
   }
 
   @keyframes floatHearts {
     0% {
-      transform: rotate(-45deg) translateY(0);
+      transform: rotate(-45deg) translateY(0) scale(1);
     }
     50% {
-      transform: rotate(-45deg) translateY(-20px);
+      transform: rotate(-35deg) translateY(-30px) scale(1.1);
     }
     100% {
-      transform: rotate(-45deg) translateY(0);
+      transform: rotate(-45deg) translateY(0) scale(1);
     }
   }
 
