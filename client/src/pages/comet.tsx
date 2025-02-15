@@ -37,9 +37,9 @@ export default function CometPage() {
       </motion.h1>
 
       <div className="space-y-8">
-        <Section title="Welcome">
+        <div className="bg-white/80 backdrop-blur rounded-lg p-6">
           <p className="text-gray-700">{t('welcome.message')}</p>
-        </Section>
+        </div>
 
         <Section title={t('rsvp.title')}>
           <p className="mb-4">{t('rsvp.message')}</p>
