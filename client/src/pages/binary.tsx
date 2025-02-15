@@ -43,7 +43,9 @@ export default function BinaryPage() {
 
         <Section title={t('rsvp.title')}>
           <p className="mb-4">{t('rsvp.message')}</p>
-          <p className="mb-4 text-pink-600">{t('rsvp.deadline')}</p>
+          <div className="my-6 p-4 bg-pink-50 rounded-lg border-2 border-pink-200">
+            <p className="text-center font-bold text-pink-600">{t('rsvp.deadline')}</p>
+          </div>
           <Button
             className="w-full"
             onClick={() => rsvpLink && window.open(rsvpLink, '_blank')}
